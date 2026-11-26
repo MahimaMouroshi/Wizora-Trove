@@ -1,4 +1,4 @@
-# Wizora Trove Backend
+
   # Wizora Trove
 
 Express + MongoDB API for Wizora Trove. This is the backend foundation for the Store, Trove Library, memberships, rentals, Request a Book, ratings, Decutler, Restoration, Blind Date, profiles and admin panel.

@@ -1,4 +1,3 @@
-# Wizora-Trove
 # Wizora Trove
 
 Full project: `backend/` (Express + MongoDB API) and `frontend/` (React + Vite UI).

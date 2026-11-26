@@ -1,27 +1,35 @@
-# Wizora-Trove
-# Wizora Trove
+# Wizora Trove Backend
 
-Full project: `backend/` (Express + MongoDB API) and `frontend/` (React + Vite UI).
+Express + MongoDB API for Wizora Trove. This is the backend foundation for the Store, Trove Library, memberships, rentals, Request a Book, ratings, Decutler, Restoration, Blind Date, profiles and admin panel.
 
+## Run locally
 
-## Run the backend
-```bash
-cd backend
-npm install
-cp .env.example .env      # then fill in MONGODB_URI and JWT_SECRET
-npm run dev                # http://localhost:5000
-```
+1. Install Node.js 20+.
+2. Copy `.env.example` to `.env` and fill values.
+3. `npm install`
+4. `npm run seed:admin`
+5. `npm run dev`
 
-## Run the frontend
-```bash
-cd frontend
-npm install
-npm run dev                # http://localhost:5173
-```
+Health check: `GET /api/health`
 
-Open http://localhost:5173 — the frontend calls the API at
-`http://localhost:5000/api` by default (see `frontend/.env.example` to change
-it via `VITE_API_URL`).
+## API groups
 
-Run backend and frontend in two separate terminals; both need to be running
-at the same time for sign-in, the library, blind date orders, etc. to work.
+- `/api/auth`
+- `/api/profile`
+- `/api/library`
+- `/api/requests`
+- `/api/ratings`
+- `/api/decutler`
+- `/api/restoration`
+- `/api/orders`
+- `/api/blind-date`
+- `/api/membership`
+- `/api/admin`
+
+## Important production notes
+
+- Connect a real payment gateway before treating membership paymentStatus as paid automatically.
+- Add transactional email for request confirmations, due dates and availability notices.
+- Add image storage (Cloudinary/S3/etc.) rather than storing image binaries in MongoDB.
+- Review privacy, refund, deposit and damaged/lost-book policies before launch.
+- Use a strong JWT secret and production CORS origin.
